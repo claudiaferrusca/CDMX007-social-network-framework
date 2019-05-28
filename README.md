@@ -35,7 +35,7 @@ cero, su alcance, sus particularidades, el flujo, las validaciones, etc.
 Concéntrate en aprender y utilizar estas nuevas tecnologías.
 
 El alcance del proyecto y el detalle de sus características es exactamente
-[el mismo que el original](https://github.com/Laboratoria/curricula-js/tree/v2.x/projects/03-social-network),
+[el mismo que el original](https://github.com/Laboratoria/CDMX007-social-network),
 incluyendo la parte de Hacker Edition pero excluyendo la parte de UX.
 
 ## Objetivos
@@ -66,11 +66,11 @@ Para comenzar tendrás que hacer un _fork_ y _clonar_ este repositorio.
 
 ## Parte obligatoria
 
-Ver [03-social-network](https://github.com/Laboratoria/curricula-js/tree/v2.x/projects/03-social-network#parte-obligatoria).
+Ver [03-social-network](https://github.com/Laboratoria/CDMX007-social-network/#parte-obligatoria).
 
 ## Hacker edition
 
-Ver [03-social-network](https://github.com/Laboratoria/curricula-js/tree/v2.x/projects/03-social-network#hacker-edition).
+Ver [03-social-network](https://github.com/Laboratoria/CDMX007-social-network/#hacker-edition).
 
 ## Entrega
 
@@ -85,32 +85,30 @@ puedas haber encontrado en el camino.
 | Habilidad | Nivel esperado |
 |-----------|----------------|
 | **JavaScript** | |
-| Estilo | 3
-| Nomenclatura/semántica | 3
-| Funciones/modularidad | 2
-| Estructuras de datos | 2
-| Tests | 2
+| Estilo | 
+| Nomenclatura/semántica | 
+| Funciones/modularidad | 
+| Estructuras de datos | 
+| Tests | 
 | **HTML** | |
-| Validación | 3
-| Estilo | 3
-| Semántica | 3
+| Validación | 
+| Estilo | 
+| Semántica | 
 | SEO | n/a
 | **CSS** | |
-| DRY | 3
-| Responsive | 3
+| DRY | 
+| Responsive | 
 | **SCM** | |
-| Git | 3
-| GitHub | 3
+| Git | 
+| GitHub | 
 | **CS** | |
-| Lógica | 2
-| Arquitectura | 2
+| Lógica | 
+| Arquitectura | 
 | Patrones/paradigmas | n/a
 
 ### Habilidades Blandas
 
-Para este proyecto esperamos que ya hayas consolidado el nivel 4 en todas tus
-habilidades blandas pero te invitamos que las lleves al siguiente nivel
-alcanzando el nivel 5 en todasvellas. Particularmente, entrena tu habilidad de
+Particularmente, entrena tu habilidad de
 autoaprendizaje, planificación y organización, y dar y recibir feedback.
 
 Recuerda la importancia de organizar, dividir y planificar tu trabajo.
@@ -124,14 +122,14 @@ Te aconsejamos revisar la rúbrica:
 
 | Habilidad | Nivel esperado |
 |-----------|----------------|
-| Planificación y organización | 4
-| Autoaprendizaje | 4
-| Solución de Problemas | 4
-| Dar y recibir feedback | 4
-| Adaptabilidad | 4
-| Trabajo en equipo (trabajo colaborativo y responsabilidad) | 4
-| Comunicación eficaz | 4
-| Presentaciones | 4
+| Planificación y organización | 
+| Autoaprendizaje | 
+| Solución de Problemas | 
+| Dar y recibir feedback | 
+| Adaptabilidad | 
+| Trabajo en equipo (trabajo colaborativo y responsabilidad) | 
+| Comunicación eficaz | 
+| Presentaciones | 
 
 ***
 
@@ -175,9 +173,12 @@ No dejes de explorar la documentación oficial de cada herramienta:
 * [Vue- school](https://vueschool.io/)
 
 Independientemente de si eliges React, Vue o Angular, todos estas herramientes
-se usan muchas veces en conjunción con Redux como manejador de _estado_.
+se usan muchas veces en conjunción con Redux, Vuex o NGRX como manejador de _estado_.
 
 * [Redux - docs oficiales](https://redux.js.org/)
+* [Vuex - docs oficiales](https://vuex.vuejs.org/guide/)
+* [NGRX - docs oficiales](https://ngrx.io/)
+
 
 ## Checklist
 
