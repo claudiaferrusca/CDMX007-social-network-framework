@@ -82,7 +82,7 @@ puedas haber encontrado en el camino.
 
 ### Tech
 
-| Habilidad | Nivel esperado |
+| Habilidad | |
 |-----------|----------------|
 | **JavaScript** | |
 | Estilo | 
@@ -120,7 +120,7 @@ la [guia general para organizar, dividir y planificar tu ttrabajo](https://docs.
 
 Te aconsejamos revisar la [rúbrica:](https://docs.google.com/spreadsheets/u/1/d/e/2PACX-1vRktPN4ilZtkRN5tUb3DVhgeihwlzk63_-JI3moA-bXpKDbHDioAK2H3qbrwWNb0Ql4wX22Tgv7-PDv/pubhtml)
 
-| Habilidad |
+| Habilidad | |
 |-----------|----------------|
 | Planificación y organización | 
 | Autoaprendizaje | 
