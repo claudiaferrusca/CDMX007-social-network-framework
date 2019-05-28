@@ -118,9 +118,9 @@ Muchas cosas pueden interferir en lo que estás intentando hacer y puede parecer
 que no está bien lo que intentas cuando no es así. Revisa las diapos 15 y 16 de
 la [guia general para organizar, dividir y planificar tu ttrabajo](https://docs.google.com/presentation/d/e/2PACX-1vQhx9D36NjpH-Daea-ITPUDUzNL8ZiNAprq_7b5PSUrfutk45tEtaOLz2lmd8f54_5jX1hypDM8f8SM/pub?start=false&loop=false&delayms=60000)
 
-Te aconsejamos revisar la rúbrica:
+Te aconsejamos revisar la [rúbrica:](https://docs.google.com/spreadsheets/u/1/d/e/2PACX-1vRktPN4ilZtkRN5tUb3DVhgeihwlzk63_-JI3moA-bXpKDbHDioAK2H3qbrwWNb0Ql4wX22Tgv7-PDv/pubhtml)
 
-| Habilidad | Nivel esperado |
+| Habilidad |
 |-----------|----------------|
 | Planificación y organización | 
 | Autoaprendizaje | 
