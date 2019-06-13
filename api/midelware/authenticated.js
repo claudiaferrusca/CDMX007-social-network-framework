@@ -1,12 +1,10 @@
 const jwt = require('jwt-simple');
 const moment = require('moment');
 const secret = 'clave_secreta_betw_Art_red_social';
-
 exports.ensureAuth = (req, res, next)=>{
 if(!req.headers.authorization){
    return res.status(403).send({message:'La peticion no tienela cabecera de autenticación'});
 }
-
 const token = req.headers.authorization.replace(/['"]+/g,'');
 try{
   const payload = jwt.decode(token, secret);
@@ -23,5 +21,5 @@ try{
 //adjuntar el payload a req
 req.user = jwt.decode(token, secret);
 next();
-
 }
+
