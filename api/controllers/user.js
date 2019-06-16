@@ -27,6 +27,7 @@ const saveUser = (req, res) => {
         user.nick = params.nick;
         user.email = params.email;
         user.img = null;
+
 //Control de usuarios duplicados
         User.find({ $or:[
             {email : user.email.toLowerCase()},
@@ -149,7 +150,7 @@ const uploadImage = (req,res)=>{
         }
         if (file_ext == "png" ||file_ext == "jpg" || file_ext == "jpeg" || file_ext == "gif" ){
         //actualizar documento de usuario logueado
-        User.findByIdAndUpdate(userId, {img:file_name}, {new:true}, (err, userUpdated)=>{
+        User.findByIdAndUpdate(userId, {image:file_name}, {new:true}, (err, userUpdated)=>{
             if(err) return res.status(500).send({message:'Error en la petición'});
 if(!userUpdated) return res.status(404).send({message:'No se ha podido actualizar el usuario'});
 return res.status(200).send({user:userUpdated});
