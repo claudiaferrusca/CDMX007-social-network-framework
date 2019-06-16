@@ -3,7 +3,9 @@ const mongoosePaginate =  require ('mongoose-pagination');
 const fs = require ("fs"); 
 const path = require ("path")
 const User = require ('../models/user');
+const Follow = require ('../models/follow');
 const jwt =  require ('../services/jwt');
+
 //Métodos de prueba
 const home = ('/', (req, res)=>{
     res.status(200).send({
@@ -88,15 +90,57 @@ const loginUser = (req, res)=>{
      }
     });
 }
+
+
 //Conseguir datos de un usuario
 const getUser = (req, res)=>{
     const userId = req.params.id;
+
     User.findById(userId, (err, user)=>{
         if(err)return res.status(500).send({message:'Error en la petición'});
+
         if(!user) return releaseEvents.status(404).send({message:'El usuario no existe'});
-        return res.status(200).send({user});
-    })
+
+       followThisUSer(req.user.sub, userId, ).then((value)=>{
+           user.password = undefined;
+        return res.status(200).send({user,
+            following: value.following, 
+            followed: value.followed});
+       });
+           
+    });
+       
+   
 }
+
+//Asincrona 
+
+const followThisUSer = async (identity_user_id, user_id)=>{
+
+    let following = await Follow.findOne({"user": identity_user_id, "followed":user_id})
+    .exec()
+    .then((follow) =>{
+    return follow;
+    })
+    .catch((err)=>{
+    return handleError(err);
+    });
+
+     let followed = await Follow.findOne({"user": user_id, "followed":identity_user_id})
+     .exec()
+     .then((follow)=>{
+        return follow;
+     })
+     .catch((err)=>{
+         return handleError(err);
+     })
+
+     return {
+         following: following,
+         followed : followed
+     }
+}
+
 //Devolver un listado de usuarios paginados
 const getUsers = (req, res)=>{
   const identity_user_id = req.user.sub;  
@@ -107,13 +151,59 @@ const getUsers = (req, res)=>{
   User.find().sort('_id').paginate(page, itemsPerPage, (err, users, total)=>{
       if(err)return res.status(500).send({message:'Eror en la petición'});
       if(!users)return res.status(404).send({message:'No hay usuarios disponibles'});
-      return res.status(200).send({
-          users,
-          total,
-          pages: Math.ceil(total/itemsPerPage)
-      })
-  })
+      followUserIds(identity_user_id).then((value)=>{
+        return res.status(200).send({
+            users,
+            users_following:value.following,
+            users_follow_me:value.followed,
+            total,
+            pages: Math.ceil(total/itemsPerPage)
+        });
+
+      });
+      
+  });
 }
+
+
+const followUserIds = async (user_id)=>{
+    const following = await Follow.find({"user":user_id}).select({"_id":0, '__v':0, 'user':0})
+    .exec()
+    .then((follows)=>{
+        const follows_clean =[];
+
+        follows.forEach((follow)=>{
+            follows_clean.push(follow.followed);
+        });
+
+        return follows_clean
+    }).catch((err)=>{
+        return handleError(err);
+    })
+
+    const followed = await Follow.find({"followed":user_id}).select({"_id":0, '__v':0, 'followed':0})
+    .exec()
+    .then((follows)=>{
+        const follows_clean =[];
+        follows.forEach((follow)=>{
+            follows_clean.push(follow.user);
+     });
+
+     return follows_clean;
+
+})
+.catch((err)=>{
+    return handleError(err);
+});
+
+return {
+    following: following,
+    followed: followed
+}
+}
+
+
+
 //Edición de datos de usuario
 const updateUser = (req, res)=>{
 const userId = req.params.id;
