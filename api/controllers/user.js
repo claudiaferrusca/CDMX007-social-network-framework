@@ -141,7 +141,7 @@ const followThisUSer = async (identity_user_id, user_id)=>{
      }
 }
 
-//Devolver un listado de usuarios paginados
+//Devolver un listado de usuarios paginados/followers
 const getUsers = (req, res)=>{
   const identity_user_id = req.user.sub;  
   if(req.params.page){
@@ -165,7 +165,7 @@ const getUsers = (req, res)=>{
   });
 }
 
-
+//devolver followers en getUsers()
 const followUserIds = async (user_id)=>{
     const following = await Follow.find({"user":user_id}).select({"_id":0, '__v':0, 'user':0})
     .exec()
@@ -200,6 +200,32 @@ return {
     following: following,
     followed: followed
 }
+}
+
+
+//Contador de seguidores, a cuantos seguimos y publicaciones, 
+const getCounters = (req, res)=>{
+    let userId= req.user.sub;
+ if(req.params.id){
+
+     userId= req.params.id;
+     }
+    getCountFollow(userId).then((value)=>{
+        return res.status(200).send(value);
+ });
+}
+
+const getCountFollow = async (user_id)=>{
+    
+    try {
+        let following = await Follow.countDocuments({"user": user_id}, (err, result ) => {return result });
+
+        let followed = await Follow.countDocuments({"followed": user_id}).then(count => count);
+
+        return{ following, followed }
+    }catch(e){
+        console.log(e)
+    }
 }
 
 
@@ -278,6 +304,7 @@ module.exports = {
     loginUser,
     getUser,
     getUsers,
+    getCounters,
     updateUser,
     uploadImage,
     getImageFile
