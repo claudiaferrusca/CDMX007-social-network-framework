@@ -86,14 +86,14 @@ const getPublications = (req, res)=>{
 
    }
 
-   //Error en los parametros
+   //Error en los parametros---revisar
    const deletePublication = (req, res) =>{
        const publicationId = req.params.id;
 
        Publication.find({'user': req.user.sub,'_id':publicationId}).remove((err)=>{
            if(err) return res.status(500).send({message: 'Error al borrar publicación'});
 
-           if(publicationId) return res.status(404).send({ message: 'No se ha borrado la publicación'});
+           if(!publicationId) return res.status(404).send({ message: 'No se ha borrado la publicación'});
 
            return res.status(200).send({message:'Publicación eliminada correctamente'});
        })
