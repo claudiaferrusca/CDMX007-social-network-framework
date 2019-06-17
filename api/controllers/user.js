@@ -4,6 +4,7 @@ const fs = require ("fs");
 const path = require ("path")
 const User = require ('../models/user');
 const Follow = require ('../models/follow');
+const Publication = require ('../models/publication');
 const jwt =  require ('../services/jwt');
 
 //Métodos de prueba
@@ -221,12 +222,16 @@ const getCountFollow = async (user_id)=>{
         let following = await Follow.countDocuments({"user": user_id}, (err, result ) => {return result });
 
         let followed = await Follow.countDocuments({"followed": user_id}).then(count => count);
+        
 
-        return{ following, followed }
+        let publications = await Publication.countDocuments({"user":user_id}).then (count => count);
+
+        return{ following, followed, publications}
     }catch(e){
         console.log(e)
     }
 }
+
 
 
 
