@@ -10,6 +10,7 @@ export class User{
      public image:String,
      public email:String,
      public password:String,
+     public gettoken:String,
      public bankAccount:String
      
     ){}

@@ -1,7 +1,25 @@
+<main>
+<h1>{{title}}</h1>
+<form #loginForm = "ngForm" (ngSubmit)= "onSubmit()">
 <p>
-  login works!
+  <label>Correo electronico</label>
+  <input type="email" name="email" #email= "ngModel"[(ngModel)]=" user.email" class= "form" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required/>
+  <span *ngIf="!email.valid && email.touched">
+    El email no es correcto
+  </span>
 </p>
 
-<div>
-  <button>Login</button>
-</div>
+<p>
+  <label>Contraseña</label>
+  <input type="password" name="password" #password= "ngModel"[(ngModel)]=" user.password" class= "form" required/>
+  <span *ngIf="!password.valid && password.touched">
+   Contraseña es obligatoria
+  </span>
+</p>
+<input type="submit" value="Entrar" [disabled]= "!loginForm.form.valid"/>
+
+</form>
+
+<a [routerLink]= "['/registro']" [routerLinkActive]="['active']">Registrate</a>
+
+</main>

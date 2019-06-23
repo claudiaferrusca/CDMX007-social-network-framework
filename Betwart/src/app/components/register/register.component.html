@@ -4,7 +4,7 @@
 </p>
 
 <div>
-  <form #registerForm = "ngForm"(ngSubmit) = "onSubmit(registerForm)">
+  <form #registerForm = "ngForm" (ngSubmit) = "onSubmit(registerForm)">
     <p>
       <label>nombre</label>
       <input type="text" name= "name" #name = "ngModel" [(ngModel)]= "user.name" required/>
@@ -39,7 +39,7 @@
 
     <p>
       <label>Contraseña</label>
-      <input type="email" name= "password" #password = "ngModel" [(ngModel)]= "user.password" required/>
+      <input type="password" name= "password" #password = "ngModel" [(ngModel)]= "user.password" required/>
       <span *ngIf = "!password.valid && password.touched">
         La contraseña es obligatoria!
       </span>

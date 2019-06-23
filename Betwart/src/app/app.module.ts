@@ -11,6 +11,9 @@ import { TicketsComponent } from './components/tickets/tickets.component';
 import { PublicationsComponent } from './components/publications/publications.component';
 import { ProfileComponent } from './components/navbar/profile/profile.component';
 import { RegisterComponent } from './components/register/register.component';
+import { UsersComponent } from './components/users/users.component';
+import { HomeComponent } from './components/home/home.component';
+
 
 @NgModule({
   declarations: [
@@ -20,12 +23,16 @@ import { RegisterComponent } from './components/register/register.component';
     TicketsComponent,
     PublicationsComponent,
     ProfileComponent,
-    RegisterComponent
+    RegisterComponent,
+    UsersComponent,
+    HomeComponent,
+  
   ],
   imports: [
     BrowserModule,
     routing,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [
     appRoutingProviders
