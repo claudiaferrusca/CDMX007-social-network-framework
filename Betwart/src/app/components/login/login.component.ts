@@ -82,11 +82,12 @@ export class LoginComponent implements OnInit {
        if(this.token.length <= 0){
          this.status = 'error';
        }else{
-         this.status = 'succes'
+         this.status = 'success'
          //Persistir token de ususrio
          localStorage.setItem('token',this.token);
          //conseguir los contadores o estadisticas del usuario
-         this._router.navigate(['./'])
+         this.getCounters();
+         
        }
       },
       error =>{
@@ -97,6 +98,19 @@ export class LoginComponent implements OnInit {
           alert("Email o contraseña incorrectas")
         }
       }
-    )
+    );
+   }
+   getCounters(){
+     this._userService.getCounters().subscribe(
+       response => {
+         this._router.navigate(['./'])
+         console.log(response);
+
+         },
+    
+       error =>{
+         console.log(<any>error);
+       }
+     )
    }
   }
