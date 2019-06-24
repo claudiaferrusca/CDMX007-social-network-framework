@@ -1,6 +1,6 @@
 export class User{
     constructor(
-     public_id :string,
+     public _id :String,
      public name:String,
      public surname:String,
      public nick: String,
