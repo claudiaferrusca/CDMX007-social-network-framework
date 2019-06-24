@@ -52,7 +52,7 @@ export class LoginComponent implements OnInit {
       if(!this.identity|| !this.identity._id){
         this.status = 'error';
       }else{
-        this.status = 'succes'
+   
         alert("identificado correctamente")
 
         //Persistir datos de usuario
@@ -82,7 +82,7 @@ export class LoginComponent implements OnInit {
        if(this.token.length <= 0){
          this.status = 'error';
        }else{
-         this.status = 'success'
+         
          //Persistir token de ususrio
          localStorage.setItem('token',this.token);
          //conseguir los contadores o estadisticas del usuario
@@ -103,6 +103,8 @@ export class LoginComponent implements OnInit {
    getCounters(){
      this._userService.getCounters().subscribe(
        response => {
+         localStorage.setItem("stats", JSON.stringify(response));
+         this.status = "success";
          this._router.navigate(['./'])
          console.log(response);
 

@@ -13,6 +13,7 @@ import { ProfileComponent } from './components/navbar/profile/profile.component'
 import { RegisterComponent } from './components/register/register.component';
 import { UsersComponent } from './components/users/users.component';
 import { HomeComponent } from './components/home/home.component';
+import { UserEditComponent } from './components/user-edit/user-edit.component';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { HomeComponent } from './components/home/home.component';
     RegisterComponent,
     UsersComponent,
     HomeComponent,
+    UserEditComponent,
   
   ],
   imports: [

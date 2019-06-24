@@ -65,16 +65,21 @@ export class UserService {
         }
         return this.stats;
     }
+
     getCounters(userId = null):Observable<any>{
         let headers = new HttpHeaders().set('Content-Type', 'application/json')
                                        .set('Authorization', this.getToken());
         
-        if(userId =!null){
+        if(userId != null){
             return this._http.get(this.url+'counters/'+ userId, {headers:headers});
         }else{
-            return this._http.get(this.url+'counters'+ userId, {headers:headers});
+            return this._http.get(this.url+'counters', {headers:headers});
         }
 
     }
+
+   
+
+
 }
 
