@@ -1,10 +1,25 @@
 
-<main>
+<main class="col-lg-8 col-lg-offset-2">
+    
+<div class="jumbotron" *ngIf = "!identity">
     <h1>{{title}}</h1>
-  </main>
+    <div>
+    <a [routerLink]= "['/registro']">Registrate</a>
+    <a [routerLink]= "['/login']">Inicia Sesión</a>
+      </div>
+        
+    </div>
 
-<div *ngIf = "!identity">
-    <p>
-      Registrate o inicia sesión
-</p>
-</div>
+    <div class="jumbotron" *ngIf = "identity">
+        <h1>{{title}}</h1>
+        <div>
+       <p>
+         Comienza a vivir!
+       </p>
+          </div>
+            
+        </div>
+    
+
+
+</main>

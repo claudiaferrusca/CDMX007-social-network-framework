@@ -1,0 +1,63 @@
+
+
+
+.register{
+    padding-top:10%;
+   
+}
+
+.send:disabled {
+    color: #fff;
+    background-color: purple;
+    border-color: purple;
+    margin-left: 35%;
+    margin-top: 15%;
+}
+
+.send:focus{
+    background-color: purple;
+    border-color: purple;
+}
+
+.send:hover{
+    background-color: purple;
+    border-color: purple;
+}
+
+.btn-primary:not(:disabled):not(.disabled):active {
+    color: #fff;
+    background-color: purple;
+    border-color: purple;
+}
+
+
+
+
+
+
+.btn-primary {
+    color: #fff;
+    background-color: purple;
+    border-color: purple;
+    margin-left: 35%;
+    margin-top: 15%;
+}
+
+h1{
+    font-size: 35px;
+    margin-top: 30%;
+    padding-left: 5%;
+    color: white;
+}
+
+span{
+    color: white;
+    font-size: 14px;  
+}
+
+.alert-danger {
+    color: white;
+    background-color: purple;
+    border-color: magenta;
+   
+}

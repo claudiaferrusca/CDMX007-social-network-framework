@@ -1,0 +1,57 @@
+h1{
+    font-size: 35px;
+    margin-top: 30%;
+    padding-left: 5%;
+    color: white;
+}
+
+img{
+    width: 300px;
+    margin-left: 25px;
+    margin-top: 115px;
+    margin-bottom: 55px;
+}
+
+.send:disabled {
+    color: #fff;
+    background-color: purple;
+    border-color: purple;
+    margin-left: 35%;
+    margin-top: 15%;
+}
+
+.send:focus{
+    background-color: purple;
+    border-color: purple;
+}
+
+.send:hover{
+    background-color: purple;
+    border-color: purple;
+}
+
+.btn-primary:not(:disabled):not(.disabled):active {
+    color: #fff;
+    background-color: purple;
+    border-color: purple;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: purple;
+    border-color: purple;
+    margin-left: 35%;
+    margin-top: 15%;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    background-color: transparent;
+    margin: 121px;
+   
+}
+
+.link{
+    margin-top:100px;
+}

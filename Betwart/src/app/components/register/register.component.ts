@@ -21,7 +21,7 @@ export class RegisterComponent implements OnInit {
     private _userService : UserService
   ) { 
 
-    this.title = "Registrate";
+    this.title = "Registro";
     this.user = new User(
     "",
     "",
@@ -49,12 +49,12 @@ export class RegisterComponent implements OnInit {
          if(response.user && response.user._id){
           //  console.log(response.user);
 
-           this.status = "Succes"
+           this.status = "success"
            form.reset();
-           alert("Registro completado correctamente")
+           
          } else{
            this.status= "error"
-           alert("El registro no ha podido completarse, quizás tu email o nickname ya esté en uso")
+          
          }
       }, 
       error =>{

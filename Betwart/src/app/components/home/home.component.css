@@ -1,0 +1,21 @@
+p{
+    color: aliceblue;
+}
+
+h1{
+    color: white;
+}
+
+.jumbotron{
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+    background-color: purple;
+    border-radius: .3rem;
+    margin-top: 190px;
+}
+
+a{
+    color:white;
+    margin-right: 15px;
+}
+   
