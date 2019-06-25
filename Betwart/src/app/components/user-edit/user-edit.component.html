@@ -1,5 +1,13 @@
 <div class="col-lg-6">
-<div class="register">
+
+<div class = "alert alert-success" *ngIf = "status === 'success'">
+  Se han atualizado tus datos correctamente
+</div>  
+<div class = "alert alert-danger" *ngIf = "status === 'error'">
+   No se han podido actualizar tus datos
+  </div> 
+
+<div class="edit">
 <form #userEditForm = "ngForm" (ngSubmit)= "onSubmit()">
   <p>
     <input type="text" name="name" #name = "ngModel" [(ngModel)]= "user.name" class="form-control" placeholder="nombre" required/>
