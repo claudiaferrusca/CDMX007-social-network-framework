@@ -10,6 +10,7 @@ import { TicketsComponent} from './components/tickets/tickets.component';
 import { ProfileComponent} from './components/navbar/profile/profile.component';
 import { HomeComponent} from './components/home/home.component';
 import { UserEditComponent } from './components/user-edit/user-edit.component';
+import { UsersComponent } from './components/users/users.component';
 
 const appRoutes:Routes = [
     {path:"", component:HomeComponent},
@@ -19,8 +20,9 @@ const appRoutes:Routes = [
     {path:"boletos", component:TicketsComponent},
     {path:"perfil", component:ProfileComponent},
     {path:"home", component:HomeComponent},
-    {path: "mis-datos", component: UserEditComponent }
-
+    {path: "mis-datos", component: UserEditComponent },
+    {path: "gente/:page", component: UsersComponent },
+    {path: "**", component: HomeComponent }
 ];
 
 export const appRoutingProviders: any[]=[];
