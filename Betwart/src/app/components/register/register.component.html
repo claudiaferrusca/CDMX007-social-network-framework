@@ -1,52 +1,58 @@
-<main>
-<p>
+<div class="col-lg-6">
+<h1>
  {{title}}
-</p>
+</h1>
 
-<div>
-  <form #registerForm = "ngForm"(ngSubmit) = "onSubmit(registerForm)">
+<div class = "alert alert-success" *ngIf = "status === 'success'">
+  Registro completado correctamente,  <a [routerLink]= "['/login']">identificate aquí</a>
+</div>
+
+<div class = "alert alert-danger" *ngIf = "status === 'error'">
+    El registro no ha podido completarse, quizás tu email o nickname ya este en uso.
+  </div>
+
+<div class="register">
+  <form #registerForm = "ngForm" (ngSubmit) = "onSubmit(registerForm)" class="col-lg-10">
     <p>
-      <label>nombre</label>
-      <input type="text" name= "name" #name = "ngModel" [(ngModel)]= "user.name" required/>
+      <input type="text" name= "name" #name = "ngModel" [(ngModel)]= "user.name" class="form-control" placeholder="nombre" required/>
       <span *ngIf = "!name.valid && name.touched">
-        El nombre es obligatorio!
+        ¡El nombre es obligatorio!
       </span>
     </p>
 
     <p>
-      <label>Apellidos</label>
-      <input type="text" name= "surname" #surname = "ngModel" [(ngModel)]= "user.surname" required/>
+      <input type="text" name= "surname" #surname = "ngModel" [(ngModel)]= "user.surname" class="form-control" placeholder="Apellido" required/>
       <span *ngIf = "!surname.valid && surname.touched">
-        Los Apellidos son obligatorios!
+        ¡Los Apellidos son obligatorios!
       </span>
     </p>
 
     <p>
-      <label>Apodo</label>
-      <input type="text" name= "nick" #nick = "ngModel" [(ngModel)]= "user.nick" required/>
+ 
+      <input type="text" name= "nick" #nick = "ngModel" [(ngModel)]= "user.nick" class="form-control" placeholder="nickname" required/>
       <span *ngIf = "!nick.valid && nick.touched">
-        El Apodo son obligatorios!
+        ¡El nickname es obligatorio!
       </span>
     </p>
 
     <p>
-      <label>Correo electronico</label>
-      <input type="email" name= "email" #email = "ngModel" [(ngModel)]= "user.email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"/>
+     
+      <input type="email" name= "email" #email = "ngModel" [(ngModel)]= "user.email" class="form-control" placeholder="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"/>
       <span *ngIf = "!email.valid && email.touched">
-        El email no es valido!
+        ¡Email no valido!
       </span>
     </p>
 
     <p>
-      <label>Contraseña</label>
-      <input type="email" name= "password" #password = "ngModel" [(ngModel)]= "user.password" required/>
+     
+      <input type="password" name= "password" #password = "ngModel" [(ngModel)]= "user.password" class="form-control" placeholder="constraseña" required/>
       <span *ngIf = "!password.valid && password.touched">
-        La contraseña es obligatoria!
+        ¡La contraseña es obligatoria!
       </span>
     </p>
 
-    <input type="submit" value= "{{title}}" [disabled] = "!registerForm.form.valid" />
+    <input type="submit" value= "Enviar" class="btn btn-primary send" [disabled] = "!registerForm.form.valid" />
 
   </form>
 </div>
-</main>
+</div>

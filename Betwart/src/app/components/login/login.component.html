@@ -1,7 +1,30 @@
+<main class="col-lg-6">
+
+  <figure>
+    <img src="../../../assets/img/logoBetwart.png">
+  </figure>
+
+<form #loginForm = "ngForm" (ngSubmit)= "onSubmit()" class="col-lg-10" >
 <p>
-  login works!
+  <label>Correo electronico</label>
+  <input type="email" name="email" #email= "ngModel"[(ngModel)]=" user.email" class= "form" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required/>
+  <span *ngIf="!email.valid && email.touched">
+    El email no es correcto
+  </span>
 </p>
 
-<div>
-  <button>Login</button>
+<p>
+  <label>Contraseña</label>
+  <input type="password" name="password" #password= "ngModel"[(ngModel)]=" user.password" class="form-control" required/>
+  <span *ngIf="!password.valid && password.touched">
+   Contraseña es obligatoria
+  </span>
+</p>
+<input type="submit" value="Entrar" class="btn btn-primary send" [disabled]= "!loginForm.form.valid"/>
+
+</form>
+<div class="link">
+  <a [routerLink]= "['/registro']" [routerLinkActive]="['active']">Registrate</a>
 </div>
+
+</main>

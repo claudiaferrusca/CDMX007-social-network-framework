@@ -1,6 +1,6 @@
 export class Follow{
     constructor(
-     public_id :string,
+     public _id :string,
      public text :String,
      public file:String,
      public created_at:String,
