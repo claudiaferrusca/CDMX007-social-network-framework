@@ -79,7 +79,7 @@ export class UserService {
 
     }
 
-    updateUser (user : User):Observable<any>{
+    updateUser(user:User):Observable<any>{
         let params =  JSON.stringify(user);
         let headers = new HttpHeaders().set('Content-Type', 'application/json')
                                        .set('Authorization', this.getToken());
@@ -88,7 +88,20 @@ export class UserService {
 
     }
    
+    getUsers(page =null): Observable<any>{
+        let headers= new HttpHeaders().set('Content-Type', 'application/json')
+                                      .set('Authorization', this.getToken());
 
+    return this._http.get(this.url+ 'users/'+page, {headers: headers});                            
+
+    }
+    getUser(id): Observable<any>{
+        let headers= new HttpHeaders().set('Content-Type', 'application/json')
+                                      .set('Authorization', this.getToken());
+
+    return this._http.get(this.url+ 'user/'+id, {headers: headers});                            
+
+    }
 
 }
 
